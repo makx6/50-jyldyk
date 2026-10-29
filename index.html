@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="ky">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Эркинбектин 50 жылдык мааракеси — Чакыруу</title>
+<meta name="description" content="Сиздерди Эркинбектин 50 жылдык мааракесине арналган салтанаттуу кечеге чакырабыз. 21-ноябрь, 2026-жыл, саат 17:00, «Altyn Kazyna» ресторану.">
+<meta name="theme-color" content="#F7F3EC">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="Эркинбектин 50 жылдык мааракеси">
+<meta property="og:description" content="21-ноябрь, 2026-жыл · саат 17:00 · «Altyn Kazyna» ресторану">
+<meta property="og:locale" content="ky_KG">
+
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23F7F3EC'/><text y='74' x='50' text-anchor='middle' font-family='Georgia,serif' font-size='62' fill='%23B8995A'>50</text></svg>">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Yeseva+One&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Forum&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body class="is-locked">
+
+<!-- ═══ Орнамент: переиспользуемые формы ═══ -->
+<svg class="svg-defs" aria-hidden="true" focusable="false">
+  <defs>
+    <!-- кыял: рог, разворачивающийся в спираль -->
+    <g id="kyial">
+      <path d="M0,0 C18,-13 43,-9 53,8 C61,22 53,35 39,34 C28,33 23,23 30,17 C36,12 44,17 41,24"/>
+    </g>
+    <!-- лист на стебле -->
+    <g id="leaf">
+      <path d="M0,0 C14,-6 28,-3 34,8 C26,14 12,12 0,0 Z"/>
+    </g>
+    <linearGradient id="goldline" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"   stop-color="#C9A961"/>
+      <stop offset="45%"  stop-color="#E4CF99"/>
+      <stop offset="100%" stop-color="#A8873F"/>
+    </linearGradient>
+    <filter id="grain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+    </filter>
+  </defs>
+</svg>
+
+<div class="grain" aria-hidden="true"></div>
+
+<!-- ═══════════ ЗАСТАВКА ═══════════ -->
+<div class="gate" id="gate">
+  <div class="gate__card">
+    <svg class="gate__frame" viewBox="0 0 300 420" aria-hidden="true">
+      <rect class="gate__rect" x="16" y="16" width="268" height="388"/>
+      <rect class="gate__rect gate__rect--inner" x="25" y="25" width="250" height="370"/>
+      <g class="gate__corner" stroke="url(#goldline)">
+        <use href="#kyial" transform="translate(30,30) rotate(45) scale(0.8)"/>
+        <use href="#kyial" transform="translate(270,30) rotate(135) scale(0.8)"/>
+        <use href="#kyial" transform="translate(270,390) rotate(225) scale(0.8)"/>
+        <use href="#kyial" transform="translate(30,390) rotate(315) scale(0.8)"/>
+      </g>
+    </svg>
+
+    <div class="gate__body">
+      <p class="gate__eyebrow">Сиз үчүн</p>
+      <h1 class="gate__title">Чакыруу</h1>
+
+      <svg class="rule" viewBox="0 0 240 40" aria-hidden="true">
+        <g stroke="url(#goldline)">
+          <use href="#kyial" transform="translate(100,20) rotate(180) scale(0.62)"/>
+          <use href="#kyial" transform="translate(140,20) scale(0.62)"/>
+          <path d="M120,12 L127,20 L120,28 L113,20 Z" class="rule__gem"/>
+          <path d="M8,20 L92,20 M148,20 L232,20" class="rule__line"/>
+        </g>
+      </svg>
+
+      <p class="gate__note">Эркинбектин 50 жылдык мааракеси</p>
+
+      <button class="gate__btn" id="gateBtn" type="button">
+        <span>Чакырууну ачуу</span>
+      </button>
+      <p class="gate__hint">Ачканда жумшак музыка коюлат</p>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ МУЗЫКА ═══════════ -->
+<audio id="audio" src="assets/music.mp3" loop preload="none"></audio>
+<button class="mute" id="muteBtn" type="button" aria-label="Музыканы өчүрүү" aria-pressed="false" hidden>
+  <svg class="mute__on" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M4 9v6h4l5 4V5L8 9H4z"/>
+    <path class="wave wave--1" d="M16 9.5a3.5 3.5 0 010 5"/>
+    <path class="wave wave--2" d="M18.5 7a7 7 0 010 10"/>
+  </svg>
+  <svg class="mute__off" viewBox="0 0 24 24" aria-hidden="true">
+    <path d="M4 9v6h4l5 4V5L8 9H4z"/>
+    <path d="M17 9.5l5 5M22 9.5l-5 5"/>
+  </svg>
+</button>
+
+<main class="stage" id="stage">
+
+  <!-- ═══════════ ГЕРОЙ ═══════════ -->
+  <header class="hero">
+    <svg class="hero__vine hero__vine--tl" viewBox="0 0 200 200" aria-hidden="true">
+      <g stroke="url(#goldline)">
+        <path class="vine__stem" d="M-4,52 C46,46 82,66 104,102 C120,128 142,140 172,138"/>
+        <use href="#kyial" transform="translate(16,30) rotate(28) scale(1.05)"/>
+        <use href="#kyial" transform="translate(96,96) rotate(66) scale(0.72)"/>
+        <use href="#leaf"  transform="translate(58,62) rotate(-18) scale(0.95)"/>
+        <use href="#leaf"  transform="translate(132,126) rotate(14) scale(0.8)"/>
+      </g>
+    </svg>
+    <svg class="hero__vine hero__vine--br" viewBox="0 0 200 200" aria-hidden="true">
+      <g stroke="url(#goldline)">
+        <path class="vine__stem" d="M-4,52 C46,46 82,66 104,102 C120,128 142,140 172,138"/>
+        <use href="#kyial" transform="translate(16,30) rotate(28) scale(1.05)"/>
+        <use href="#kyial" transform="translate(96,96) rotate(66) scale(0.72)"/>
+        <use href="#leaf"  transform="translate(58,62) rotate(-18) scale(0.95)"/>
+        <use href="#leaf"  transform="translate(132,126) rotate(14) scale(0.8)"/>
+      </g>
+    </svg>
+
+    <p class="hero__eyebrow" data-seq="1">Урматтуу коноктор</p>
+    <h2 class="hero__name" data-seq="2">Эркинбек</h2>
+
+    <!-- ✦ Подпись страницы: медальон, который рисует сам себя ✦ -->
+    <div class="medal" data-seq="3">
+      <svg class="medal__art" viewBox="0 0 320 320" aria-hidden="true">
+        <g class="medal__ring" stroke="url(#goldline)">
+          <circle class="medal__circle medal__circle--out" cx="160" cy="160" r="126"/>
+          <circle class="medal__circle medal__circle--in"  cx="160" cy="160" r="97"/>
+          <g class="medal__horns">
+            <use href="#kyial" transform="translate(160,160) rotate(0)   translate(104,-16) scale(0.78)"/>
+            <use href="#kyial" transform="translate(160,160) rotate(45)  translate(104,-16) scale(0.78)"/>
+            <use href="#kyial" transform="translate(160,160) rotate(90)  translate(104,-16) scale(0.78)"/>
+            <use href="#kyial" transform="translate(160,160) rotate(135) translate(104,-16) scale(0.78)"/>
+            <use href="#kyial" transform="translate(160,160) rotate(180) translate(104,-16) scale(0.78)"/>
+            <use href="#kyial" transform="translate(160,160) rotate(225) translate(104,-16) scale(0.78)"/>
+            <use href="#kyial" transform="translate(160,160) rotate(270) translate(104,-16) scale(0.78)"/>
+            <use href="#kyial" transform="translate(160,160) rotate(315) translate(104,-16) scale(0.78)"/>
+          </g>
+        </g>
+      </svg>
+      <span class="medal__num">50</span>
+    </div>
+
+    <p class="hero__unit" data-seq="4">жылдык мааракеси</p>
+
+    <div class="hero__scroll" data-seq="5" aria-hidden="true">
+      <span class="hero__scrollLine"></span>
+    </div>
+  </header>
+
+  <!-- ═══════════ ОБРАЩЕНИЕ ═══════════ -->
+  <section class="panel panel--address reveal">
+    <h3 class="script">Урматтуу туугандар<br>жана кадырлуу коноктор!</h3>
+    <svg class="rule rule--sm" viewBox="0 0 240 40" aria-hidden="true">
+      <g stroke="url(#goldline)">
+        <use href="#kyial" transform="translate(100,20) rotate(180) scale(0.62)"/>
+        <use href="#kyial" transform="translate(140,20) scale(0.62)"/>
+        <path d="M120,12 L127,20 L120,28 L113,20 Z" class="rule__gem"/>
+        <path d="M8,20 L92,20 M148,20 L232,20" class="rule__line"/>
+      </g>
+    </svg>
+    <p class="prose">
+      Сиздерди Эркинбектин 50 жылдык мааракесине арналган
+      салтанаттуу кечеге чакырабыз.
+    </p>
+    <p class="prose">
+      Сиздердин катышууңуз биз үчүн зор кубаныч
+      жана өзгөчө сыймык болот.
+    </p>
+  </section>
+
+  <!-- ═══════════ ДАТА ═══════════ -->
+  <section class="panel panel--when reveal">
+    <p class="label">Той күнү</p>
+    <p class="bigdate">21-ноябрь, 2026</p>
+    <p class="weekday">Ишемби</p>
+
+    <div class="cal" role="table" aria-label="2026-жылдын ноябрь айы">
+      <div class="cal__head" role="row">
+        <span role="columnheader">Дүй</span><span role="columnheader">Шей</span>
+        <span role="columnheader">Шар</span><span role="columnheader">Бей</span>
+        <span role="columnheader">Жум</span><span role="columnheader">Ише</span>
+        <span role="columnheader" class="cal__wk">Жек</span>
+      </div>
+      <div class="cal__grid" id="calGrid" role="rowgroup"></div>
+    </div>
+
+    <p class="time">17<span class="time__sep">:</span>00</p>
+    <p class="label label--soft">Коноктордун жыйналышы</p>
+  </section>
+
+  <!-- ═══════════ ТАЙМЕР ═══════════ -->
+  <section class="panel panel--count reveal">
+    <p class="label">Тойго чейин калды</p>
+    <div class="count" id="count" aria-live="off">
+      <div class="count__cell"><span class="count__num" id="cDays">—</span><span class="count__cap">күн</span></div>
+      <span class="count__dot" aria-hidden="true"></span>
+      <div class="count__cell"><span class="count__num" id="cHours">—</span><span class="count__cap">саат</span></div>
+      <span class="count__dot" aria-hidden="true"></span>
+      <div class="count__cell"><span class="count__num" id="cMins">—</span><span class="count__cap">мүнөт</span></div>
+      <span class="count__dot" aria-hidden="true"></span>
+      <div class="count__cell"><span class="count__num" id="cSecs">—</span><span class="count__cap">секунд</span></div>
+    </div>
+    <p class="count__done" id="countDone" hidden>Той башталды — кош келиңиздер!</p>
+  </section>
+
+  <!-- ═══════════ МЕСТО ═══════════ -->
+  <section class="panel panel--where reveal">
+    <p class="label">Дарек</p>
+    <h3 class="venue">«Altyn&nbsp;Kazyna»</h3>
+    <p class="venue__kind">ресторану</p>
+    <p class="venue__addr">Жеңиш көчөсү, 351<br><span>Бишкек шаары, Биринчи май району</span></p>
+
+    <a class="map" href="https://2gis.kg/bishkek/geo/70030077086800620?m=74.657965%2C42.887744%2F17.67"
+       target="_blank" rel="noopener" aria-label="«Altyn Kazyna» ресторанын 2ГИС картасынан ачуу">
+      <img src="assets/map-2gis.jpg" width="1118" height="780" decoding="async"
+           alt="«Altyn Kazyna» ресторанынын картадагы орду — Жеңиш көчөсү, 351">
+      <span class="map__tag" aria-hidden="true">
+        2ГИС
+        <svg viewBox="0 0 12 12"><path d="M3.5 8.5L8.5 3.5M4.5 3.5h4v4"/></svg>
+      </span>
+    </a>
+
+    <a class="btn btn--lead" href="https://2gis.kg/bishkek/geo/70030077086800620?m=74.657965%2C42.887744%2F17.67"
+       target="_blank" rel="noopener">
+      2ГИС-тен жол көрсөтүү
+    </a>
+  </section>
+
+  <!-- ═══════════ ПОДПИСЬ ═══════════ -->
+  <footer class="panel panel--sign reveal">
+    <svg class="rule rule--sm" viewBox="0 0 240 40" aria-hidden="true">
+      <g stroke="url(#goldline)">
+        <use href="#kyial" transform="translate(100,20) rotate(180) scale(0.62)"/>
+        <use href="#kyial" transform="translate(140,20) scale(0.62)"/>
+        <path d="M120,12 L127,20 L120,28 L113,20 Z" class="rule__gem"/>
+        <path d="M8,20 L92,20 M148,20 L232,20" class="rule__line"/>
+      </g>
+    </svg>
+    <p class="sign__from">Сый-урмат менен,</p>
+    <p class="sign__name">Эркинбек</p>
+    <p class="sign__wait">Сиздерди күтөбүз</p>
+  </footer>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>
